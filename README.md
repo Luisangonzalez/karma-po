@@ -1,11 +1,12 @@
 # Karma-po
 
-## Tag v0.2 no grunt add karma-chrome-launcher
+## Tag v0.3 no grunt add karma-chrome-launcher
 
 * jasmine-core
 * karma
 * karma-jasmine
 * karma-jasmine-jquery
+* karma-chrome-launcher
 
 ## And more config
 
@@ -27,4 +28,4 @@ browsers: ['Chrome', 'Chrome_without_security'],
 
 And open your browser in `http://localhost:9876/` and test executing in just moment.
 
-**In this case automatic open a browser and run test, moreover if you close browser reopen again** 
+**In this case automatic open a browser and run test, moreover if you close browser reopen again**
