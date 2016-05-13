@@ -1,31 +1,42 @@
 # Karma-po
 
-## Tag v0.3 no grunt add karma-chrome-launcher
+## Tag v0.3 no grunt add karma-phantomjs-launcher
 
-* jasmine-core
-* karma
-* karma-jasmine
-* karma-jasmine-jquery
-* karma-chrome-launcher
+- jasmine-core
+- karma
+- karma-jasmine
+- karma-jasmine-jquery
+- karma-phantomjs-launcher
+- phantomjs-prebuilt
 
 ## And more config
 
 ```javascript
-browsers: ['Chrome', 'Chrome_without_security'],
+browsers: ['PhantomJS', 'PhantomJS_custom'],
 
-    // you can define custom flags
-    customLaunchers: {
-      Chrome_without_security: {
-        base: 'Chrome',
-        flags: ['--disable-web-security']
-      }
-    }
+   // you can define custom flags
+   customLaunchers: {
+     'PhantomJS_custom': {
+       base: 'PhantomJS',
+       options: {
+         windowName: 'my-window',
+         settings: {
+           webSecurityEnabled: false
+         },
+       },
+       flags: ['--load-images=true'],
+       debug: true
+     }
+   },
+
+   phantomjsLauncher: {
+     // Have phantomjs exit if a ResourceError is encountered (useful if karma exits without killing phantom)
+     exitOnResourceError: true
+   }
 ```
 
 ## To run
 
-* Server: `node_modules/karma/bin/karma start my.conf.js`
+- Server: `node_modules/karma/bin/karma start my.conf.js`
 
-And open your browser in `http://localhost:9876/` and test executing in just moment.
-
-**In this case automatic open a browser and run test, moreover if you close browser reopen again**
+**;)**
