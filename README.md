@@ -1,11 +1,25 @@
 # Karma-po
 
-## Tag v0.1 no grunt, no browser only this npm dependencies
+## Tag v0.2 no grunt add karma-chrome-launcher
 
 * jasmine-core
 * karma
 * karma-jasmine
 * karma-jasmine-jquery
+
+## And more config
+
+```javascript
+browsers: ['Chrome', 'Chrome_without_security'],
+
+    // you can define custom flags
+    customLaunchers: {
+      Chrome_without_security: {
+        base: 'Chrome',
+        flags: ['--disable-web-security']
+      }
+    }
+```
 
 ## To run
 
@@ -13,6 +27,4 @@
 
 And open your browser in `http://localhost:9876/` and test executing in just moment.
 
-Reload browser and restart test.
-
-Is posible run in other console while server run `node_modules/karma/bin/karma run my.conf.js`
+**In this case automatic open a browser and run test, moreover if you close browser reopen again** 
